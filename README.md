@@ -1,34 +1,32 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## 실행 영상
 
-## Getting Started
+## 네이버
 
-First, run the development server:
+- Redirect URI: http://localhost:3000/api/auth/callback/naver
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+## 카카오
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- clientId: REST API 키
+- clientSecret: 내 애플리케이션 -> 왼쪽 사이드바에서 보안 -> 발급 후 사용
+- Redirect URI: http://localhost:3000/api/auth/callback/kakao
+  - 설정: 내 애플리케이션 -> 왼쪽 사이드바에서 제품 설정 -> 카카오 로그인
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+### error🔥 Redirect URI 확인하는 법
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+- 에러난 페이지에서 `new URL(document.referrer).searchParams.get("redirect_uri")`를 콘솔창에 입력
+- 출처: [네이버](https://help.naver.com/support/contents/contents.help?serviceNo=17063&categoryNo=17795&from=alias)
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+### error🔥 The default export is not a React Component in page: "/"
 
-## Learn More
+- arrow function을 function()으로 바꾸면 된다.
+- 출처: [stackoverflow](https://stackoverflow.com/questions/59873698/the-default-export-is-not-a-react-component-in-page-nextjs)
 
-To learn more about Next.js, take a look at the following resources:
+### error🔥 next-auth node version downgrade
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- `$ nvm install 버전`
+- `$ nvm use 버전`
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+### 참고자료
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- [NextAuth.js](https://next-auth.js.org/getting-started/example)
+- [한국어 설명](https://blog.toycrane.xyz/7분만에-next-auth-알아보기-d4432ff97158)
