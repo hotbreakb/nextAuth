@@ -1,4 +1,6 @@
 ## 실행 영상
+https://user-images.githubusercontent.com/64337152/155147960-62d8f150-3610-4a46-ae16-f60b5eb9f78f.mov
+
 
 ## 네이버
 
